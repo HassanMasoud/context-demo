@@ -18,34 +18,33 @@ import { LockOutlined } from "@material-ui/icons";
 import { withStyles } from "@material-ui/core/styles";
 import styles from "./styles/FormStyles";
 
+const words = {
+  english: {
+    signIn: "Sign In",
+    email: "Email",
+    password: "Password",
+    rememberMe: "Remember Me",
+  },
+  french: {
+    signIn: "Se Connecter",
+    email: "Adresse Electronique",
+    password: "Mot De Passe",
+    rememberMe: "Souviens-toi De Moi",
+  },
+  spanish: {
+    signIn: "Registrarse",
+    email: "Correo Electronico",
+    password: "Contrasena",
+    rememberMe: "Recuerdame",
+  },
+};
+
 class Form extends Component {
   static contextType = LanguageContext;
 
   render() {
     const { language, changeLanguage } = this.context;
     const { classes } = this.props;
-
-    const words = {
-      english: {
-        signIn: "Sign In",
-        email: "Email",
-        password: "Password",
-        rememberMe: "Remember Me",
-      },
-      french: {
-        signIn: "Se Connecter",
-        email: "Adresse Electronique",
-        password: "Mot De Passe",
-        rememberMe: "Souviens-toi De Moi",
-      },
-      spanish: {
-        signIn: "Registrarse",
-        email: "Correo Electronico",
-        password: "Contrasena",
-        rememberMe: "Recuerdame",
-      },
-    };
-
     const { signIn, email, password, rememberMe } = words[language];
     return (
       <main className={classes.main}>
